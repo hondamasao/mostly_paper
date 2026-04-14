@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mostly Paper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="nav-logo">Mostly Paper</a>
+  <ul class="nav-links">
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="cart-btn" id="cart-toggle" aria-label="Cart">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    <span class="cart-count" id="cart-count">0</span>
+  </button>
+</nav>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <span class="cart-title">Your Cart</span>
+    <button class="cart-close" id="cart-close">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <p class="cart-empty">Your cart is empty.</p>
+  </div>
+  <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span id="cart-total">$0.00</span>
+    </div>
+    <button class="btn btn-primary w-full" id="checkout-btn">Proceed to Checkout</button>
+    <p class="cart-note">Secure checkout via Stripe. Prints fulfilled by Printful.</p>
+  </div>
+</aside>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Original paintings & prints</p>
+    <h1 class="hero-title">Mostly<span>Paper</span></h1>
+    <p class="hero-sub">Acrylic on canvas. Dark figurative work exploring decay, dissolution, and the body unraveling. Based everywhere, understood internationally.</p>
+    <div class="hero-cta">
+      <a href="#shop" class="btn btn-primary">Shop Prints</a>
+      <a href="#gallery" class="btn btn-ghost">View Gallery</a>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span>Original Paintings</span><span class="div">—</span>
+    <span>Fine Art Prints</span><span class="div">—</span>
+    <span>Ships Worldwide</span><span class="div">—</span>
+    <span>Acrylic on Canvas</span><span class="div">—</span>
+    <span>Limited Originals</span><span class="div">—</span>
+    <span>Prints on Demand</span><span class="div">—</span>
+    <span>Original Paintings</span><span class="div">—</span>
+    <span>Fine Art Prints</span><span class="div">—</span>
+    <span>Ships Worldwide</span><span class="div">—</span>
+    <span>Acrylic on Canvas</span><span class="div">—</span>
+    <span>Limited Originals</span><span class="div">—</span>
+    <span>Prints on Demand</span><span class="div">—</span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <p class="section-label">Selected works</p>
+  <div class="gallery-grid" id="gallery-grid">
+    <!-- populated by JS from PAINTINGS data -->
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">✕</button>
+  <div class="lightbox-inner">
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-info">
+      <p class="lightbox-title" id="lightbox-title"></p>
+      <p class="lightbox-meta" id="lightbox-meta"></p>
+      <a href="#shop" class="btn btn-primary" id="lightbox-shop" onclick="closeLightbox()">Shop this piece</a>
+    </div>
+  </div>
+</div>
+
+<!-- SHOP -->
+<section class="shop-section" id="shop">
+  <p class="section-label">Shop</p>
+  <div class="shop-intro">
+    <h2>Own the work.</h2>
+    <p>Prints are produced on demand and shipped worldwide. Originals are one of a kind — once sold, gone forever. All payments go directly to the artist.</p>
+  </div>
+  <div class="product-tabs">
+    <button class="product-tab active" data-tab="prints">Prints</button>
+    <button class="product-tab" data-tab="originals">Originals</button>
+  </div>
+  <div class="tab-panel active" id="tab-prints">
+    <div class="product-grid" id="prints-grid">
+      <!-- populated by JS -->
+    </div>
+    <p class="fulfillment-note">All prints fulfilled automatically via Printful. Archival-quality giclée on heavyweight matte or lustre paper. Orders ship within 2–5 business days worldwide.</p>
+  </div>
+  <div class="tab-panel" id="tab-originals">
+    <div class="product-grid" id="originals-grid">
+      <!-- populated by JS -->
+    </div>
+    <p class="fulfillment-note">Originals are shipped directly by the artist. Contact via email or TikTok to discuss condition, sizing, and shipping. Commission inquiries welcome.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <p class="section-label">About</p>
+  <div class="about-inner">
+    <div class="about-text">
+      <h2>The work.</h2>
+      <p>Mostly Paper is the painting alias of an artist who works primarily in <em>acrylic on canvas</em>, and obsessively in pen and ink on paper. The canvases are rare. The drawings are everywhere.</p>
+      <p>The work sits somewhere between horror iconography and grief portraiture — figures caught mid-dissolution, faces that are more wound than face, bodies that don't hold together. <em>It resonates with a lot of people.</em> Especially, for some reason, in Russia.</p>
+      <p>Based online. Ships worldwide. DM on TikTok for anything.</p>
+      <div class="about-stats">
+        <div><span class="stat-num">9+</span><span class="stat-label">Paintings</span></div>
+        <div><span class="stat-num">∞</span><span class="stat-label">Drawings</span></div>
+        <div><span class="stat-num">5K+</span><span class="stat-label">Followers</span></div>
+      </div>
+    </div>
+    <div class="about-img-grid">
+      <div class="about-img-slot"><span>Artist photo</span></div>
+      <div class="about-img-slot"><span>Studio / process</span></div>
+      <div class="about-img-slot"><span>Work in progress</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-logo">Mostly Paper</div>
+  <div class="footer-right">
+    <ul class="footer-links">
+      <li><a href="https://tiktok.com/@mostlypaper" target="_blank">TikTok</a></li>
+      <li><a href="https://instagram.com/mostlypaper" target="_blank">Instagram</a></li>
+      <li><a href="mailto:hello@mostlypaper.com">Email</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Mostly Paper. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- SIZE PICKER MODAL -->
+<div class="modal-overlay" id="modal-overlay"></div>
+<div class="modal" id="size-modal">
+  <button class="modal-close" id="modal-close">✕</button>
+  <div class="modal-img-wrap">
+    <img id="modal-img" src="" alt="">
+  </div>
+  <div class="modal-info">
+    <p class="modal-title" id="modal-title"></p>
+    <p class="modal-medium" id="modal-medium"></p>
+    <p class="modal-size-label">Select size</p>
+    <div class="size-options" id="size-options"></div>
+    <div class="modal-price-row">
+      <span class="modal-price" id="modal-price">$0</span>
+      <button class="btn btn-primary" id="modal-add-btn">Add to cart</button>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
