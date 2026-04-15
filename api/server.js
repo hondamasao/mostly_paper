@@ -12,21 +12,21 @@
 //    PRINTFUL_API_KEY
 //    YOUR_DOMAIN  (e.g. https://mostlypaper.com)
 // ─────────────────────────────────────────────────────────────────
-
+ 
 require('dotenv').config();
 const express = require('express');
 const stripe  = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const crypto  = require('crypto');
-
+ 
 const app = express();
-
+ 
 // ── Raw body needed for Stripe webhook signature verification
 app.use('/api/webhook', express.raw({ type: 'application/json' }));
 app.use(express.json());
-app.use(express.static(require('path').join(__dirname, '..'))); // serve frontend files
-
+app.use(express.static('.')); // serve frontend files
+ 
 const DOMAIN = process.env.YOUR_DOMAIN || 'http://localhost:3000';
-
+ 
 // ─────────────────────────────────────────────────────────────────
 //  POST /api/create-checkout
 //  Body: { items: [ { id, title, type, size, price, qty, printfulVariantId, image } ] }
@@ -34,11 +34,11 @@ const DOMAIN = process.env.YOUR_DOMAIN || 'http://localhost:3000';
 // ─────────────────────────────────────────────────────────────────
 app.post('/api/create-checkout', async (req, res) => {
   const { items } = req.body;
-
+ 
   if (!items || items.length === 0) {
     return res.status(400).json({ error: 'Cart is empty' });
   }
-
+ 
   try {
     // Build Stripe line items
     const lineItems = items.map(item => ({
@@ -58,7 +58,7 @@ app.post('/api/create-checkout', async (req, res) => {
       },
       quantity: item.qty,
     }));
-
+ 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: lineItems,
@@ -108,15 +108,15 @@ app.post('/api/create-checkout', async (req, res) => {
         }))),
       },
     });
-
+ 
     res.json({ url: session.url });
-
+ 
   } catch (err) {
     console.error('Stripe error:', err);
     res.status(500).json({ error: err.message });
   }
 });
-
+ 
 // ─────────────────────────────────────────────────────────────────
 //  POST /api/webhook
 //  Stripe sends events here after payment.
@@ -126,7 +126,7 @@ app.post('/api/create-checkout', async (req, res) => {
 app.post('/api/webhook', async (req, res) => {
   const sig = req.headers['stripe-signature'];
   let event;
-
+ 
   try {
     event = stripe.webhooks.constructEvent(
       req.body,
@@ -137,15 +137,15 @@ app.post('/api/webhook', async (req, res) => {
     console.error('Webhook signature failed:', err.message);
     return res.status(400).send(`Webhook Error: ${err.message}`);
   }
-
+ 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
     await handleSuccessfulPayment(session);
   }
-
+ 
   res.json({ received: true });
 });
-
+ 
 // ─────────────────────────────────────────────────────────────────
 //  handleSuccessfulPayment
 //  Splits order into prints (→ Printful) and originals (→ email alert)
@@ -158,14 +158,14 @@ async function handleSuccessfulPayment(session) {
     console.error('Failed to parse cart metadata');
     return;
   }
-
+ 
   const shipping = session.shipping_details?.address;
   const customerEmail = session.customer_details?.email;
   const customerName  = session.customer_details?.name;
-
+ 
   const prints   = cartItems.filter(i => i.type === 'print');
   const originals = cartItems.filter(i => i.type === 'original');
-
+ 
   // ── Auto-fulfill prints via Printful ──────────────
   if (prints.length > 0 && shipping) {
     const printfulItems = prints
@@ -174,7 +174,7 @@ async function handleSuccessfulPayment(session) {
         sync_variant_id: i.printfulVariantId,
         quantity: 1,
       }));
-
+ 
     if (printfulItems.length > 0) {
       try {
         await createPrintfulOrder({
@@ -202,17 +202,45 @@ async function handleSuccessfulPayment(session) {
       console.warn('Prints in order but no Printful variant IDs configured. Update data.js.');
     }
   }
-
+ 
   // ── Alert Jason about originals (manual fulfillment) ──
   if (originals.length > 0) {
     console.log('=== ORIGINAL SALE — MANUAL FULFILLMENT NEEDED ===');
     console.log('Customer:', customerName, customerEmail);
     console.log('Shipping:', shipping);
     console.log('Items:', originals);
-    // TODO: send an email/SMS to Jason here using Resend, Postmark, or Twilio
+ 
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const itemList = originals.map(i =>
+          `• ${i.paintingId} — Original (${i.size}) x${i.qty}`
+        ).join('\n');
+ 
+        const shippingText = shipping
+          ? `${shipping.line1}${shipping.line2 ? ', ' + shipping.line2 : ''}, ${shipping.city}, ${shipping.state || ''} ${shipping.postal_code}, ${shipping.country}`
+          : 'No shipping address provided';
+ 
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            from: 'Mostly Paper <orders@mostly-paper.com>',
+            to: process.env.JASON_EMAIL || 'hello@mostly-paper.com',
+            subject: '🎨 Original sold — ship it!',
+            text: `Someone bought an original!\n\nCustomer: ${customerName}\nEmail: ${customerEmail}\n\nItems:\n${itemList}\n\nShip to:\n${shippingText}\n\nLog into Stripe to see the full order details.`,
+          }),
+        });
+        console.log('Email alert sent for original sale');
+      } catch (emailErr) {
+        console.error('Failed to send email alert:', emailErr);
+      }
+    }
   }
 }
-
+ 
 // ─────────────────────────────────────────────────────────────────
 //  Printful API helper
 // ─────────────────────────────────────────────────────────────────
@@ -225,14 +253,14 @@ async function createPrintfulOrder(orderData) {
     },
     body: JSON.stringify({ ...orderData, confirm: true }),
   });
-
+ 
   const data = await response.json();
   if (data.code !== 200) {
     throw new Error(`Printful API error: ${JSON.stringify(data)}`);
   }
   return data.result;
 }
-
+ 
 // ─────────────────────────────────────────────────────────────────
 //  Start server
 // ─────────────────────────────────────────────────────────────────
