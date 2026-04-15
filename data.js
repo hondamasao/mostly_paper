@@ -1,29 +1,3 @@
-// ─────────────────────────────────────────────────────────────────
-//  MOSTLY PAPER — Paintings Data
-//  Edit this file to update paintings, prices, and availability.
-//
-//  For each painting:
-//    id:        unique slug (used in URLs and order data)
-//    title:     display name
-//    year:      year created
-//    medium:    e.g. "Acrylic on canvas"
-//    image:     path to image file, e.g. "painting-01.jpg"
-//    gallery:   true = show in gallery section
-//    span2:     true = this item spans 2 columns in gallery grid (use for landscape pieces)
-//
-//  original:
-//    available: true/false
-//    price:     in dollars (integer)
-//    size:      physical dimensions, e.g. "16×20\""
-//    note:      optional string shown at checkout, e.g. "Contact before purchase"
-//
-//  prints:
-//    Array of size options. Each:
-//      label:   display size, e.g. "8×10\""
-//      price:   in dollars (integer)
-//      printfulVariantId: Printful product variant ID (fill in after Printful setup)
-// ─────────────────────────────────────────────────────────────────
-
 const PAINTINGS = [
   {
     id: "untitled-01",
@@ -33,17 +7,12 @@ const PAINTINGS = [
     image: "painting-01.jpg",
     gallery: true,
     span2: true,
-    original: {
-      available: true,
-      price: 1200,
-      size: "18×24\"",
-    },
+    original: { available: true, price: 1200, size: "18×24\"" },
     prints: [
-      { label: "5×7\"",   price: 25,  printfulVariantId: "" },
-      { label: "8×10\"",  price: 40,  printfulVariantId: "" },
-      { label: "11×14\"", price: 60,  printfulVariantId: "" },
-      { label: "18×24\"", price: 95,  printfulVariantId: "" },
-      { label: "24×36\"", price: 140, printfulVariantId: "" },
+      { label: "8×10\"",  price: 30,  printfulVariantId: "69defba9454192" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "69defba9454071" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "69defba94540f1" },
+      { label: "24×36\"", price: 100, printfulVariantId: "69defba9454147" },
     ]
   },
   {
@@ -54,17 +23,12 @@ const PAINTINGS = [
     image: "painting-02.jpg",
     gallery: true,
     span2: false,
-    original: {
-      available: true,
-      price: 1500,
-      size: "16×20\"",
-    },
+    original: { available: true, price: 1500, size: "16×20\"" },
     prints: [
-      { label: "5×7\"",   price: 25,  printfulVariantId: "" },
-      { label: "8×10\"",  price: 40,  printfulVariantId: "" },
-      { label: "11×14\"", price: 60,  printfulVariantId: "" },
-      { label: "18×24\"", price: 95,  printfulVariantId: "" },
-      { label: "24×36\"", price: 140, printfulVariantId: "" },
+      { label: "8×10\"",  price: 30,  printfulVariantId: "69defe70ebd441" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "69defe70ebd282" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "69defe70ebd336" },
+      { label: "24×36\"", price: 100, printfulVariantId: "69defe70ebd3b2" },
     ]
   },
   {
@@ -75,17 +39,12 @@ const PAINTINGS = [
     image: "painting-03.jpg",
     gallery: true,
     span2: false,
-    original: {
-      available: true,
-      price: 1800,
-      size: "20×24\"",
-    },
+    original: { available: true, price: 1800, size: "20×24\"" },
     prints: [
-      { label: "5×7\"",   price: 25,  printfulVariantId: "" },
-      { label: "8×10\"",  price: 40,  printfulVariantId: "" },
-      { label: "11×14\"", price: 60,  printfulVariantId: "" },
-      { label: "18×24\"", price: 95,  printfulVariantId: "" },
-      { label: "24×36\"", price: 140, printfulVariantId: "" },
+      { label: "8×10\"",  price: 30,  printfulVariantId: "69deff29bb1014" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "69deff29bb0f17" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "69deff29bb0f79" },
+      { label: "24×36\"", price: 100, printfulVariantId: "69deff29bb0fc1" },
     ]
   },
   {
@@ -96,17 +55,12 @@ const PAINTINGS = [
     image: "painting-04.jpg",
     gallery: true,
     span2: false,
-    original: {
-      available: true,
-      price: 2200,
-      size: "24×30\"",
-    },
+    original: { available: true, price: 2200, size: "24×30\"" },
     prints: [
-      { label: "5×7\"",   price: 25,  printfulVariantId: "" },
-      { label: "8×10\"",  price: 40,  printfulVariantId: "" },
-      { label: "11×14\"", price: 60,  printfulVariantId: "" },
-      { label: "18×24\"", price: 95,  printfulVariantId: "" },
-      { label: "24×36\"", price: 140, printfulVariantId: "" },
+      { label: "8×10\"",  price: 30,  printfulVariantId: "69deffdb150cb5" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "69deffdb150bb3" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "69deffdb150c29" },
+      { label: "24×36\"", price: 100, printfulVariantId: "69deffdb150c71" },
     ]
   },
   {
@@ -117,17 +71,12 @@ const PAINTINGS = [
     image: "painting-05.jpg",
     gallery: true,
     span2: false,
-    original: {
-      available: true,
-      price: 1600,
-      size: "18×24\"",
-    },
+    original: { available: true, price: 1600, size: "18×24\"" },
     prints: [
-      { label: "5×7\"",   price: 25,  printfulVariantId: "" },
-      { label: "8×10\"",  price: 40,  printfulVariantId: "" },
-      { label: "11×14\"", price: 60,  printfulVariantId: "" },
-      { label: "18×24\"", price: 95,  printfulVariantId: "" },
-      { label: "24×36\"", price: 140, printfulVariantId: "" },
+      { label: "8×10\"",  price: 30,  printfulVariantId: "69df0091a149a4" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "69df0091a147d7" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "69df0091a14882" },
+      { label: "24×36\"", price: 100, printfulVariantId: "69df0091a14919" },
     ]
   },
   {
@@ -138,17 +87,12 @@ const PAINTINGS = [
     image: "painting-06.jpg",
     gallery: true,
     span2: false,
-    original: {
-      available: true,
-      price: 1400,
-      size: "16×20\"",
-    },
+    original: { available: true, price: 1400, size: "16×20\"" },
     prints: [
-      { label: "5×7\"",   price: 25,  printfulVariantId: "" },
-      { label: "8×10\"",  price: 40,  printfulVariantId: "" },
-      { label: "11×14\"", price: 60,  printfulVariantId: "" },
-      { label: "18×24\"", price: 95,  printfulVariantId: "" },
-      { label: "24×36\"", price: 140, printfulVariantId: "" },
+      { label: "8×10\"",  price: 30,  printfulVariantId: "69df0103a88334" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "69df0103a88236" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "69df0103a882a8" },
+      { label: "24×36\"", price: 100, printfulVariantId: "69df0103a882e4" },
     ]
   },
   {
@@ -159,17 +103,12 @@ const PAINTINGS = [
     image: "painting-07.jpg",
     gallery: true,
     span2: false,
-    original: {
-      available: true,
-      price: 1900,
-      size: "20×24\"",
-    },
+    original: { available: true, price: 1900, size: "20×24\"" },
     prints: [
-      { label: "5×7\"",   price: 25,  printfulVariantId: "" },
-      { label: "8×10\"",  price: 40,  printfulVariantId: "" },
-      { label: "11×14\"", price: 60,  printfulVariantId: "" },
-      { label: "18×24\"", price: 95,  printfulVariantId: "" },
-      { label: "24×36\"", price: 140, printfulVariantId: "" },
+      { label: "8×10\"",  price: 30,  printfulVariantId: "69df01677eb196" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "69df01677eb071" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "69df01677eb0e9" },
+      { label: "24×36\"", price: 100, printfulVariantId: "69df01677eb147" },
     ]
   },
   {
@@ -180,17 +119,12 @@ const PAINTINGS = [
     image: "painting-08.jpg",
     gallery: true,
     span2: false,
-    original: {
-      available: true,
-      price: 2000,
-      size: "24×30\"",
-    },
+    original: { available: true, price: 2000, size: "24×30\"" },
     prints: [
-      { label: "5×7\"",   price: 25,  printfulVariantId: "" },
-      { label: "8×10\"",  price: 40,  printfulVariantId: "" },
-      { label: "11×14\"", price: 60,  printfulVariantId: "" },
-      { label: "18×24\"", price: 95,  printfulVariantId: "" },
-      { label: "24×36\"", price: 140, printfulVariantId: "" },
+      { label: "8×10\"",  price: 30,  printfulVariantId: "69df023f945017" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "69df023f944ee8" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "69df023f944f45" },
+      { label: "24×36\"", price: 100, printfulVariantId: "69df023f944fd6" },
     ]
   },
   {
@@ -201,17 +135,12 @@ const PAINTINGS = [
     image: "painting-09.jpg",
     gallery: true,
     span2: false,
-    original: {
-      available: true,
-      price: 1700,
-      size: "18×24\"",
-    },
+    original: { available: true, price: 1700, size: "18×24\"" },
     prints: [
-      { label: "5×7\"",   price: 25,  printfulVariantId: "" },
-      { label: "8×10\"",  price: 40,  printfulVariantId: "" },
-      { label: "11×14\"", price: 60,  printfulVariantId: "" },
-      { label: "18×24\"", price: 95,  printfulVariantId: "" },
-      { label: "24×36\"", price: 140, printfulVariantId: "" },
+      { label: "8×10\"",  price: 30,  printfulVariantId: "69df01d697a7d8" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "69df01d697a6b5" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "69df01d697a736" },
+      { label: "24×36\"", price: 100, printfulVariantId: "69df01d697a784" },
     ]
   },
 ];
