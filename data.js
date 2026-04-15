@@ -5,7 +5,7 @@ const PAINTINGS = [
     year: "2023",
     medium: "Oil on canvas",
     image: "painting-01.jpg",
-    category: "painting"
+    category: "painting",
     gallery: true,
     span2: true,
     original: { available: true, price: 400, size: "18×24\"" },
@@ -22,7 +22,7 @@ const PAINTINGS = [
     year: "2023",
     medium: "Oil on canvas",
     image: "painting-02.jpg",
-      category: "painting"
+    category: "painting",
     gallery: true,
     span2: false,
     original: { available: true, price: 400, size: "16×20\"" },
@@ -39,7 +39,7 @@ const PAINTINGS = [
     year: "2024",
     medium: "Oil on canvas",
     image: "painting-03.jpg",
-    category: "painting"
+    category: "painting",
     gallery: true,
     span2: false,
     original: { available: true, price: 450, size: "20×24\"" },
@@ -56,7 +56,7 @@ const PAINTINGS = [
     year: "2024",
     medium: "Oil on canvas",
     image: "painting-04.jpg",
-    category: "painting"
+    category: "painting",
     gallery: true,
     span2: false,
     original: { available: true, price: 600, size: "24×30\"" },
@@ -73,7 +73,7 @@ const PAINTINGS = [
     year: "2024",
     medium: "Oil on canvas",
     image: "painting-05.jpg",
-    category: "painting"
+    category: "painting",
     gallery: true,
     span2: false,
     original: { available: true, price: 350, size: "18×24\"" },
@@ -90,7 +90,7 @@ const PAINTINGS = [
     year: "2024",
     medium: "Oil on canvas",
     image: "painting-06.jpg",
-    category: "painting"
+    category: "painting",
     gallery: true,
     span2: false,
     original: { available: true, price: 350, size: "16×20\"" },
@@ -107,7 +107,7 @@ const PAINTINGS = [
     year: "2024",
     medium: "Oil on canvas",
     image: "painting-07.jpg",
-    category: "painting"
+    category: "painting",
     gallery: true,
     span2: false,
     original: { available: true, price: 400, size: "20×24\"" },
@@ -124,7 +124,7 @@ const PAINTINGS = [
     year: "2024",
     medium: "Oil on canvas",
     image: "painting-08.jpg",
-    category: "painting"
+    category: "painting",
     gallery: true,
     span2: false,
     original: { available: true, price: 600, size: "24×30\"" },
@@ -141,7 +141,7 @@ const PAINTINGS = [
     year: "2024",
     medium: "Oil on canvas",
     image: "painting-09.jpg",
-    category: "painting"
+    category: "painting",
     gallery: true,
     span2: false,
     original: { available: true, price: 400, size: "18×24\"" },
