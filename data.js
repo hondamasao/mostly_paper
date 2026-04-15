@@ -7,7 +7,7 @@ const PAINTINGS = [
     image: "painting-01.jpg",
     gallery: true,
     span2: true,
-    original: { available: true, price: 1200, size: "18×24\"" },
+    original: { available: true, price: 400, size: "18×24\"" },
     prints: [
       { label: "8×10\"",  price: 30,  printfulVariantId: "69defba9454192" },
       { label: "11×14\"", price: 50,  printfulVariantId: "69defba9454071" },
@@ -23,7 +23,7 @@ const PAINTINGS = [
     image: "painting-02.jpg",
     gallery: true,
     span2: false,
-    original: { available: true, price: 1500, size: "16×20\"" },
+    original: { available: true, price: 400, size: "16×20\"" },
     prints: [
       { label: "8×10\"",  price: 30,  printfulVariantId: "69defe70ebd441" },
       { label: "11×14\"", price: 50,  printfulVariantId: "69defe70ebd282" },
@@ -39,7 +39,7 @@ const PAINTINGS = [
     image: "painting-03.jpg",
     gallery: true,
     span2: false,
-    original: { available: true, price: 1800, size: "20×24\"" },
+    original: { available: true, price: 450, size: "20×24\"" },
     prints: [
       { label: "8×10\"",  price: 30,  printfulVariantId: "69deff29bb1014" },
       { label: "11×14\"", price: 50,  printfulVariantId: "69deff29bb0f17" },
@@ -55,7 +55,7 @@ const PAINTINGS = [
     image: "painting-04.jpg",
     gallery: true,
     span2: false,
-    original: { available: true, price: 2200, size: "24×30\"" },
+    original: { available: true, price: 600, size: "24×30\"" },
     prints: [
       { label: "8×10\"",  price: 30,  printfulVariantId: "69deffdb150cb5" },
       { label: "11×14\"", price: 50,  printfulVariantId: "69deffdb150bb3" },
@@ -71,7 +71,7 @@ const PAINTINGS = [
     image: "painting-05.jpg",
     gallery: true,
     span2: false,
-    original: { available: true, price: 1600, size: "18×24\"" },
+    original: { available: true, price: 350, size: "18×24\"" },
     prints: [
       { label: "8×10\"",  price: 30,  printfulVariantId: "69df0091a149a4" },
       { label: "11×14\"", price: 50,  printfulVariantId: "69df0091a147d7" },
@@ -87,7 +87,7 @@ const PAINTINGS = [
     image: "painting-06.jpg",
     gallery: true,
     span2: false,
-    original: { available: true, price: 1400, size: "16×20\"" },
+    original: { available: true, price: 350, size: "16×20\"" },
     prints: [
       { label: "8×10\"",  price: 30,  printfulVariantId: "69df0103a88334" },
       { label: "11×14\"", price: 50,  printfulVariantId: "69df0103a88236" },
@@ -103,7 +103,7 @@ const PAINTINGS = [
     image: "painting-07.jpg",
     gallery: true,
     span2: false,
-    original: { available: true, price: 1900, size: "20×24\"" },
+    original: { available: true, price: 400, size: "20×24\"" },
     prints: [
       { label: "8×10\"",  price: 30,  printfulVariantId: "69df01677eb196" },
       { label: "11×14\"", price: 50,  printfulVariantId: "69df01677eb071" },
@@ -119,7 +119,7 @@ const PAINTINGS = [
     image: "painting-08.jpg",
     gallery: true,
     span2: false,
-    original: { available: true, price: 2000, size: "24×30\"" },
+    original: { available: true, price: 600, size: "24×30\"" },
     prints: [
       { label: "8×10\"",  price: 30,  printfulVariantId: "69df023f945017" },
       { label: "11×14\"", price: 50,  printfulVariantId: "69df023f944ee8" },
@@ -135,7 +135,7 @@ const PAINTINGS = [
     image: "painting-09.jpg",
     gallery: true,
     span2: false,
-    original: { available: true, price: 1700, size: "18×24\"" },
+    original: { available: true, price: 400, size: "18×24\"" },
     prints: [
       { label: "8×10\"",  price: 30,  printfulVariantId: "69df01d697a7d8" },
       { label: "11×14\"", price: 50,  printfulVariantId: "69df01d697a6b5" },
