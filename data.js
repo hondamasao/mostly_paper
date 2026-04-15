@@ -55,7 +55,7 @@ const PAINTINGS = [
     gallery: true,
     span2: false,
     original: {
-      available: false,
+      available: true,
       price: 1500,
       size: "16×20\"",
     },
