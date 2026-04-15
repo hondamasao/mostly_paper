@@ -23,7 +23,7 @@ const app = express();
 // ── Raw body needed for Stripe webhook signature verification
 app.use('/api/webhook', express.raw({ type: 'application/json' }));
 app.use(express.json());
-app.use(express.static('.')); // serve frontend files
+app.use(express.static(require('path').join(__dirname, '..'))); // serve frontend files
 
 const DOMAIN = process.env.YOUR_DOMAIN || 'http://localhost:3000';
 
