@@ -7,7 +7,7 @@
 //    title:     display name
 //    year:      year created
 //    medium:    e.g. "Acrylic on canvas"
-//    image:     path to image file, e.g. "images/painting-01.jpg"
+//    image:     path to image file, e.g. "painting-01.jpg"
 //    gallery:   true = show in gallery section
 //    span2:     true = this item spans 2 columns in gallery grid (use for landscape pieces)
 //
@@ -30,7 +30,7 @@ const PAINTINGS = [
     title: "Untitled I",
     year: "2023",
     medium: "Acrylic on canvas",
-    image: "images/painting-01.jpg",
+    image: "painting-01.jpg",
     gallery: true,
     span2: true,
     original: {
@@ -51,7 +51,7 @@ const PAINTINGS = [
     title: "Untitled II",
     year: "2023",
     medium: "Acrylic on canvas",
-    image: "images/painting-02.jpg",
+    image: "painting-02.jpg",
     gallery: true,
     span2: false,
     original: {
@@ -72,7 +72,7 @@ const PAINTINGS = [
     title: "Untitled III",
     year: "2024",
     medium: "Acrylic on canvas",
-    image: "images/painting-03.jpg",
+    image: "painting-03.jpg",
     gallery: true,
     span2: false,
     original: {
@@ -93,7 +93,7 @@ const PAINTINGS = [
     title: "Untitled IV",
     year: "2024",
     medium: "Acrylic on canvas",
-    image: "images/painting-04.jpg",
+    image: "painting-04.jpg",
     gallery: true,
     span2: false,
     original: {
@@ -114,7 +114,7 @@ const PAINTINGS = [
     title: "Untitled V",
     year: "2024",
     medium: "Acrylic on canvas",
-    image: "images/painting-05.jpg",
+    image: "painting-05.jpg",
     gallery: true,
     span2: false,
     original: {
@@ -135,7 +135,7 @@ const PAINTINGS = [
     title: "Untitled VI",
     year: "2024",
     medium: "Acrylic on canvas",
-    image: "images/painting-06.jpg",
+    image: "painting-06.jpg",
     gallery: true,
     span2: false,
     original: {
@@ -156,7 +156,7 @@ const PAINTINGS = [
     title: "Untitled VII",
     year: "2024",
     medium: "Acrylic on canvas",
-    image: "images/painting-07.jpg",
+    image: "painting-07.jpg",
     gallery: true,
     span2: false,
     original: {
@@ -177,7 +177,7 @@ const PAINTINGS = [
     title: "Untitled VIII",
     year: "2024",
     medium: "Acrylic on canvas",
-    image: "images/painting-08.jpg",
+    image: "painting-08.jpg",
     gallery: true,
     span2: false,
     original: {
@@ -198,7 +198,7 @@ const PAINTINGS = [
     title: "Untitled IX",
     year: "2024",
     medium: "Acrylic on canvas",
-    image: "images/painting-09.jpg",
+    image: "painting-09.jpg",
     gallery: true,
     span2: false,
     original: {
