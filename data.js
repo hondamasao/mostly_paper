@@ -153,7 +153,6 @@ const PAINTINGS = [
     ]
   },
 ];
-,
   {
     id: "drawing-01",
     title: "Drawing I",
