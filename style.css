@@ -935,3 +935,27 @@ footer {
   .product-grid { grid-template-columns: 1fr; }
   .hero-title { font-size: 5rem; }
 }
+/* ── Category Tabs ──────────────────────────────── */
+.gallery-tab {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: -1px;
+}
+
+.gallery-tab.active {
+  color: var(--off);
+  border-bottom-color: var(--blood2);
+}
+
+.gallery-tab:hover {
+  color: var(--off);
+}
