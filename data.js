@@ -153,3 +153,140 @@ const PAINTINGS = [
     ]
   },
 ];
+,
+  {
+    id: "drawing-01",
+    title: "Drawing I",
+    year: "2024",
+    medium: "Ink on paper",
+    image: "drawing-01.jpg",
+    category: "drawing",
+    gallery: true,
+    span2: false,
+    original: { available: true, price: 300, size: "9×12\"" },
+    prints: [
+      { label: "8×10\"",  price: 30,  printfulVariantId: "" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "" },
+      { label: "24×36\"", price: 100, printfulVariantId: "" },
+    ]
+  },
+  {
+    id: "drawing-02",
+    title: "Drawing II",
+    year: "2024",
+    medium: "Ink on paper",
+    image: "drawing-02.jpg",
+    category: "drawing",
+    gallery: true,
+    span2: false,
+    original: { available: true, price: 300, size: "9×12\"" },
+    prints: [
+      { label: "8×10\"",  price: 30,  printfulVariantId: "" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "" },
+      { label: "24×36\"", price: 100, printfulVariantId: "" },
+    ]
+  },
+  {
+    id: "drawing-03",
+    title: "Drawing III",
+    year: "2024",
+    medium: "Ink on paper",
+    image: "drawing-03.jpg",
+    category: "drawing",
+    gallery: true,
+    span2: false,
+    original: { available: true, price: 300, size: "9×12\"" },
+    prints: [
+      { label: "8×10\"",  price: 30,  printfulVariantId: "" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "" },
+      { label: "24×36\"", price: 100, printfulVariantId: "" },
+    ]
+  },
+  {
+    id: "drawing-04",
+    title: "Drawing IV",
+    year: "2024",
+    medium: "Ink on paper",
+    image: "drawing-04.jpg",
+    category: "drawing",
+    gallery: true,
+    span2: false,
+    original: { available: true, price: 300, size: "9×12\"" },
+    prints: [
+      { label: "8×10\"",  price: 30,  printfulVariantId: "" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "" },
+      { label: "24×36\"", price: 100, printfulVariantId: "" },
+    ]
+  },
+  {
+    id: "drawing-05",
+    title: "Drawing V",
+    year: "2024",
+    medium: "Ink on paper",
+    image: "drawing-05.jpg",
+    category: "drawing",
+    gallery: true,
+    span2: false,
+    original: { available: true, price: 300, size: "9×12\"" },
+    prints: [
+      { label: "8×10\"",  price: 30,  printfulVariantId: "" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "" },
+      { label: "24×36\"", price: 100, printfulVariantId: "" },
+    ]
+  },
+  {
+    id: "drawing-06",
+    title: "Drawing VI",
+    year: "2024",
+    medium: "Ink on paper",
+    image: "drawing-06.jpg",
+    category: "drawing",
+    gallery: true,
+    span2: false,
+    original: { available: true, price: 300, size: "9×12\"" },
+    prints: [
+      { label: "8×10\"",  price: 30,  printfulVariantId: "" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "" },
+      { label: "24×36\"", price: 100, printfulVariantId: "" },
+    ]
+  },
+  {
+    id: "drawing-07",
+    title: "Drawing VII",
+    year: "2024",
+    medium: "Ink on paper",
+    image: "drawing-07.jpg",
+    category: "drawing",
+    gallery: true,
+    span2: false,
+    original: { available: true, price: 300, size: "9×12\"" },
+    prints: [
+      { label: "8×10\"",  price: 30,  printfulVariantId: "" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "" },
+      { label: "24×36\"", price: 100, printfulVariantId: "" },
+    ]
+  },
+  {
+    id: "drawing-08",
+    title: "Drawing VIII",
+    year: "2024",
+    medium: "Ink on paper",
+    image: "drawing-08.jpg",
+    category: "drawing",
+    gallery: true,
+    span2: false,
+    original: { available: true, price: 300, size: "9×12\"" },
+    prints: [
+      { label: "8×10\"",  price: 30,  printfulVariantId: "" },
+      { label: "11×14\"", price: 50,  printfulVariantId: "" },
+      { label: "18×24\"", price: 80,  printfulVariantId: "" },
+      { label: "24×36\"", price: 100, printfulVariantId: "" },
+    ]
+  }
