@@ -42,7 +42,7 @@ const PAINTINGS = [
     category: "painting",
     gallery: true,
     span2: false,
-    original: { available: true, price: 1800, size: "20x24" },
+    original: { available: true, price: 1800, size: "16x20" },
     prints: [
       { label: "8x10",  price: 30,  printfulVariantId: "69deff29bb1014" },
       { label: "11x14", price: 50,  printfulVariantId: "69deff29bb0f17" },
@@ -59,7 +59,7 @@ const PAINTINGS = [
     category: "painting",
     gallery: true,
     span2: false,
-    original: { available: true, price: 2200, size: "24x30" },
+    original: { available: true, price: 2200, size: "18x24" },
     prints: [
       { label: "8x10",  price: 30,  printfulVariantId: "69deffdb150cb5" },
       { label: "11x14", price: 50,  printfulVariantId: "69deffdb150bb3" },
@@ -76,7 +76,7 @@ const PAINTINGS = [
     category: "painting",
     gallery: true,
     span2: false,
-    original: { available: true, price: 1600, size: "18x24" },
+    original: { available: true, price: 1600, size: "12x24" },
     prints: [
       { label: "8x10",  price: 30,  printfulVariantId: "69df0091a149a4" },
       { label: "11x14", price: 50,  printfulVariantId: "69df0091a147d7" },
@@ -110,7 +110,7 @@ const PAINTINGS = [
     category: "painting",
     gallery: true,
     span2: false,
-    original: { available: true, price: 1900, size: "20x24" },
+    original: { available: true, price: 1900, size: "16x20" },
     prints: [
       { label: "8x10",  price: 30,  printfulVariantId: "69df01677eb196" },
       { label: "11x14", price: 50,  printfulVariantId: "69df01677eb071" },
@@ -127,7 +127,7 @@ const PAINTINGS = [
     category: "painting",
     gallery: true,
     span2: false,
-    original: { available: true, price: 2000, size: "24x30" },
+    original: { available: true, price: 2000, size: "30x30" },
     prints: [
       { label: "8x10",  price: 30,  printfulVariantId: "69df023f945017" },
       { label: "11x14", price: 50,  printfulVariantId: "69df023f944ee8" },
@@ -144,7 +144,7 @@ const PAINTINGS = [
     category: "painting",
     gallery: true,
     span2: false,
-    original: { available: true, price: 1700, size: "18x24" },
+    original: { available: true, price: 1700, size: "16x20" },
     prints: [
       { label: "8x10",  price: 30,  printfulVariantId: "69df01d697a7d8" },
       { label: "11x14", price: 50,  printfulVariantId: "69df01d697a6b5" },
