@@ -99,12 +99,22 @@ function renderOriginalsGrid() {
 
 function renderShop() { renderPrintsGrid(); renderOriginalsGrid(); }
 
+const CATEGORY_LABELS = { all: 'All', painting: 'Paintings', drawing: 'Drawings', sketch: 'Sketches' };
+
+// Categories that actually have works in data.js. Tabs only render when
+// there's more than one category to filter by.
+function activeCategories() {
+  const cats = [...new Set(PAINTINGS.map(p => p.category))];
+  return cats.length > 1 ? ['all', ...cats] : [];
+}
+
 function initGalleryTabs() {
   const container = $('gallery-tabs');
   if (!container) return;
-  const cats = ['all', 'painting', 'drawing', 'sketch'];
-  const labels = { all: 'All', painting: 'Paintings', drawing: 'Drawings', sketch: 'Sketches' };
-  container.innerHTML = cats.map(c => `<button class="gallery-tab${c === 'all' ? ' active' : ''}" data-cat="${c}">${labels[c]}</button>`).join('');
+  const cats = activeCategories();
+  if (cats.length === 0) { container.innerHTML = ''; return; }
+  const labels = CATEGORY_LABELS;
+  container.innerHTML = cats.map(c => `<button class="gallery-tab${c === 'all' ? ' active' : ''}" data-cat="${c}">${labels[c] || c}</button>`).join('');
   container.querySelectorAll('.gallery-tab').forEach(btn => {
     btn.addEventListener('click', () => {
       container.querySelectorAll('.gallery-tab').forEach(b => b.classList.remove('active'));
@@ -118,9 +128,10 @@ function initGalleryTabs() {
 function initShopCategoryTabs() {
   const container = $('shop-category-tabs');
   if (!container) return;
-  const cats = ['all', 'painting', 'drawing', 'sketch'];
-  const labels = { all: 'All', painting: 'Paintings', drawing: 'Drawings', sketch: 'Sketches' };
-  container.innerHTML = cats.map(c => `<button class="gallery-tab${c === 'all' ? ' active' : ''}" data-cat="${c}">${labels[c]}</button>`).join('');
+  const cats = activeCategories();
+  if (cats.length === 0) { container.innerHTML = ''; return; }
+  const labels = CATEGORY_LABELS;
+  container.innerHTML = cats.map(c => `<button class="gallery-tab${c === 'all' ? ' active' : ''}" data-cat="${c}">${labels[c] || c}</button>`).join('');
   container.querySelectorAll('.gallery-tab').forEach(btn => {
     btn.addEventListener('click', () => {
       container.querySelectorAll('.gallery-tab').forEach(b => b.classList.remove('active'));

@@ -152,6 +152,11 @@ const PAINTINGS = [
       { label: "24x36", price: 100, printfulVariantId: "69df01d697a784" }
     ]
   },
+  // Drawings temporarily removed from the site — prints aren't set up
+  // with Printful yet. To bring them back, restore the entries below
+  // (git history has them: drawing-01 … drawing-08) and fill in the
+  // printfulVariantId fields once the products exist in Printful.
+  /*
   {
     id: "drawing-01",
     title: "Drawing I",
@@ -288,4 +293,5 @@ const PAINTINGS = [
       { label: "24x36", price: 100, printfulVariantId: "" }
     ]
   }
+  */
 ];
