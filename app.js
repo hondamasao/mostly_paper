@@ -102,8 +102,8 @@ function renderShop() { renderPrintsGrid(); renderOriginalsGrid(); }
 function initGalleryTabs() {
   const container = $('gallery-tabs');
   if (!container) return;
-  const cats = ['all', 'painting', 'drawing', 'sketch'];
-  const labels = { all: 'All', painting: 'Paintings', drawing: 'Drawings', sketch: 'Sketches' };
+  const cats = ['all', 'painting'];
+  const labels = { all: 'All', painting: 'Paintings' };
   container.innerHTML = cats.map(c => `<button class="gallery-tab${c === 'all' ? ' active' : ''}" data-cat="${c}">${labels[c]}</button>`).join('');
   container.querySelectorAll('.gallery-tab').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -118,8 +118,8 @@ function initGalleryTabs() {
 function initShopCategoryTabs() {
   const container = $('shop-category-tabs');
   if (!container) return;
-  const cats = ['all', 'painting', 'drawing', 'sketch'];
-  const labels = { all: 'All', painting: 'Paintings', drawing: 'Drawings', sketch: 'Sketches' };
+  const cats = ['all', 'painting'];
+  const labels = { all: 'All', painting: 'Paintings' };
   container.innerHTML = cats.map(c => `<button class="gallery-tab${c === 'all' ? ' active' : ''}" data-cat="${c}">${labels[c]}</button>`).join('');
   container.querySelectorAll('.gallery-tab').forEach(btn => {
     btn.addEventListener('click', () => {
